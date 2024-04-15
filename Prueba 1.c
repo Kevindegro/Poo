@@ -89,13 +89,37 @@ int main(){
 
 //punto 5
 int main(){
+	char tipo;
+	int tamaño;
+	int cant;
+	puts("Ingrese el tipo: A o B");
+	scanf("%s", &tipo);
 	
+	puts("Ingrese el tamaño: 1 o 2");
+	scanf("%d",&tamaño);
+	
+	puts("Ingrese la cantidad a comprar");
+	scanf("%d", &cant);
+	
+	int T=0;
+	
+	if(tipo=='A' && tamaño==1){
+		T=cant*200;
+		printf("El total es de:%d", T);
+		return 0;	
+	}else if(tipo=='A' && tamaño==2){
+		T=cant*300;
+		printf("El total es de:%d", T);
+		return 0;	
+	}else if(tipo=='B' && tamaño==1){
+		T=cant*300;
+		printf("El total es de:%d", T);
+		return 0;	
+	}else if(tipo=='B' && tamaño==2){
+		T=cant*500;
+		printf("El total es de:%d", T);
+		return 0;	
+	}
+	printf("El tamaño o el tipo ingresado es incorrecto");
+	return 0;
 }
-
-
-
-
-
-
-
-
