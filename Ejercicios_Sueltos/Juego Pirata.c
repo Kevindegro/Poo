@@ -43,16 +43,19 @@ Tesoro=4
     Tablero[pirata1][pirata2]=3;
     Tablero[tesoro1][tesoro2]=4;
     
-    if (Tablero[pirata1][pirata2] == Tablero[tesoro1][tesoro2]) {
+    while (Tablero[pirata1][pirata2] == Tablero[tesoro1][tesoro2]) {
+        pirata1 = (rand()% 6) + 1;
+        pirata2 = (rand()% 6) + 1;
+        puts("hola");
+    }
         
-    } else {
         for (int i = 0; i < 8; i++){
         for(int j=0;j < 8; j++){
             printf("%d ", Tablero[i][j]);
         }
         printf("\n");
    }
-    }
+    
     
 
     
