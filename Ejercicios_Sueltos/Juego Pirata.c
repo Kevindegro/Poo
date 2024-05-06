@@ -42,12 +42,18 @@ Tesoro=4
     Tablero[7][0]=2;
     Tablero[pirata1][pirata2]=3;
     Tablero[tesoro1][tesoro2]=4;
-           for (int i = 0; i < 8; i++){
+    
+    if (Tablero[pirata1][pirata2] == Tablero[tesoro1][tesoro2]) {
+        
+    } else {
+        for (int i = 0; i < 8; i++){
         for(int j=0;j < 8; j++){
             printf("%d ", Tablero[i][j]);
         }
         printf("\n");
    }
+    }
+    
 
     
 
