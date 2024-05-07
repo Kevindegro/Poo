@@ -34,8 +34,7 @@ int main(int argc, char * argv[]){
     Tablero[0][7]=2;
     Tablero[7][0]=2;
     Tablero[pirata1][pirata2]= pirata;
-    /*Tablero[tesoro1][tesoro2] = 4;*/
-    while (Tablero[pirata1][pirata2] == Tablero[tesoro1][tesoro2]) {
+    while (Tablero[pirata1][pirata2] == Tablero[tesoro1][tesoro2]){
         pirata1 = (rand()% 6) + 1;
         pirata2 = (rand()% 6) + 1;
     }
@@ -51,10 +50,11 @@ int main(int argc, char * argv[]){
 
 while (intentos <= 50) {
    
-    printf("intento Nº%d\n", intentos);
+    printf("\nintento Nº%d\n", intentos);
+    printf("\n");
     intentos++;
     int opcionDireccion;
-    printf("Elija una opcion\n 1)Norte\n 2)Sur\n 3)Este\n 4)Oeste: ");
+    printf("Elija una opcion\n 1)Norte\n 2)Sur\n 3)Este\n 4)Oeste:\n");
      scanf("%d", &opcionDireccion);
         if (opcionDireccion == 1) {
             Tablero[pirata1 -1][pirata2] = pirata;
@@ -78,6 +78,7 @@ while (intentos <= 50) {
             pirata2=b - 1;
         } else {
             puts("Opcion invalida");
+            printf("\n");
         }
         a=pirata1;
         b=pirata2;
