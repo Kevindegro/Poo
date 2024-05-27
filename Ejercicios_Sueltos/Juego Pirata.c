@@ -1,11 +1,11 @@
-//includes
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#define YELLOW  "\x1b[33m"
+#define RESET   "\x1b[0m"
 
 //funcion para crear el tablero, se definen las variables de la funcion
-int crear_tablero(int n,int Tablero[n][n],int pirata, int pirata1, int pirata2, int tesoro1, int tesoro2){
+void crear_tablero(int n,int Tablero[n][n],int pirata, int pirata1, int pirata2, int tesoro1, int tesoro2){
     //condicion para que el tablero sea un numero minimo de 4
   
     
@@ -39,10 +39,15 @@ int crear_tablero(int n,int Tablero[n][n],int pirata, int pirata1, int pirata2, 
 }
 
 //funcion para imprimir el tablero
-int imprimir_tablero (int n,int Tablero[n][n] ){
+void imprimir_tablero (int n,int Tablero[n][n], int pirata){
     for (int i = 0; i < n; i++){
         for(int j=0;j < n; j++){
+            if(Tablero[i][j] == pirata){
+                printf(YELLOW "%d " RESET, Tablero[i][j]);
+            }
+            else{
             printf("%d ", Tablero[i][j]);
+            }
         }
         printf("\n");
    }
@@ -60,6 +65,7 @@ int buscar_tesoro (int n,int Tablero[n][n],int pirata, int pirata1, int pirata2,
     //se crea la variable opcionDireccion pidiendole al usuario que elija una opcion para poder identificar el movimiento del pirata
     //en caso de que el numero no este en las opciones salta un error
     int opcionDireccion;
+    if(intentos >= 1){
     printf("Elija una opcion\n 1)Norte\n 2)Sur\n 3)Este\n 4)Oeste:\n");
      scanf("%d", &opcionDireccion);
         //norte
@@ -87,18 +93,23 @@ int buscar_tesoro (int n,int Tablero[n][n],int pirata, int pirata1, int pirata2,
           pirata1=a;
             pirata2=b - 1;
         } //mensaje de error
-        else {
+        else{
             puts("Opcion invalida");
             printf("\n");
             return 0;
         }
         a=pirata1;
         b=pirata2;
-    
+    }
     //actualizacion de posicion del pirata
     for (int i = 0; i < n; i++){
         for(int j=0;j < n; j++){
+            if(Tablero[i][j] == pirata){
+                printf(YELLOW "%d " RESET, Tablero[i][j]);
+            }
+            else{
             printf("%d ", Tablero[i][j]);
+            }
         }
         printf("\n");
    }
@@ -140,10 +151,10 @@ int main(int argc, char * argv[]){
     int pirata2 = (rand()% (n-2)) + 1;
     int tesoro1 = (rand()% (n-2)) + 1;
     int tesoro2 = (rand()% (n-2)) + 1;
-    int intentos = 1;
+    int intentos = 0;
     int Tablero [n][n];
     //llamadas a las funciones
     crear_tablero (n, Tablero,pirata, pirata1, pirata2, tesoro1, tesoro2);
-    imprimir_tablero (n,Tablero);
+    imprimir_tablero (n,Tablero, pirata);
     buscar_tesoro (n, Tablero,pirata, pirata1, pirata2, tesoro1, tesoro2, intentos);
 }
