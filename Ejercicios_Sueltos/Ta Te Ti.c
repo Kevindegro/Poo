@@ -38,17 +38,18 @@
                 }
                 tablero [posicion1][posicion2] = 'O';
                 printf("\n");
-                if(tablero [0][0] == 'X' && tablero [0][1] == 'X' && tablero [0][2] == 'X' ||
-                tablero [1][0] == 'X' && tablero [1][1] == 'X' && tablero [1][2] == 'X' ||
-                tablero [2][0] == 'X' && tablero [2][1] == 'X' && tablero [2][2] == 'X' ||
-                tablero [0][0] == 'X' && tablero [1][0] == 'X' && tablero [2][0] == 'X' ||
-                tablero [0][1] == 'X' && tablero [1][1] == 'X' && tablero [2][1] == 'X' ||
-                tablero [0][2] == 'X' && tablero [1][2] == 'X' && tablero [2][2] == 'X' ||
-                tablero [0][0] == 'X' && tablero [1][1] == 'X' && tablero [2][2] == 'X' ||
-                tablero [0][2] == 'X' && tablero [1][1] == 'X' && tablero [2][0] == 'X'){
-                    printf("Ganaste algo en tu vida");
+                    if((tablero[0][0] == 'O' && tablero[1][1] == 'O' && tablero[2][2] == 'O') || (tablero[1][0] == 'O' && tablero[1][1] == 'O' && tablero[1][2] == 'O') ||(tablero[0][0] == 'O' && tablero[0][1] == 'O' && tablero[0][2] == 'O') || (tablero[2][0] == 'O' && tablero[2][1] == 'O' && tablero[2][2] == 'O') || (tablero[0][0] == 'O' && tablero[1][0] == 'O' && tablero[2][0] == 'O') ||(tablero[0][1] == 'O' && tablero[1][1] == 'O' && tablero[2][1] == 'O') ||(tablero[0][2] == 'O' && tablero[1][2] == 'O' && tablero[2][2] == 'O') ||(tablero[0][2] == 'O' && tablero[1][1] == 'O' && tablero[2][0] == 'O')){
+                    
+                    for(int i=0;i<3;i++){
+                        for(int j=0;j<3;j++){
+                            printf("%c ", tablero[i][j]);
+                        }
+                        printf("\n");
+                    }
+
+                    printf("\nGanaste algo en tu vida");
                     break;
-                }
+                }else
                 for(int i=0;i<3;i++){
                     for(int j=0;j<3;j++){
                         printf("%c ", tablero[i][j]);
@@ -72,22 +73,25 @@
                 tablero [posicion1][posicion2] = 'X';
                 printf("\n");
                 
+                
+                   if((tablero[0][0] == 'X' && tablero[1][1] == 'X' && tablero[2][2] == 'X') || (tablero[1][0] == 'X' && tablero[1][1] == 'X' && tablero[1][2] == 'X') ||(tablero[0][0] == 'X' && tablero[0][1] == 'X' && tablero[0][2] == 'X') || (tablero[2][0] == 'X' && tablero[2][1] == 'X' && tablero[2][2] == 'X') || (tablero[0][0] == 'X' && tablero[1][0] == 'X' && tablero[2][0] == 'X') ||(tablero[0][1] == 'X' && tablero[1][1] == 'X' && tablero[2][1] == 'X') ||(tablero[0][2] == 'X' && tablero[1][2] == 'X' && tablero[2][2] == 'X') ||(tablero[0][2] == 'X' && tablero[1][1] == 'X' && tablero[2][0] == 'X')){
+                    
+                    for(int i=0;i<3;i++){
+                        for(int j=0;j<3;j++){
+                            printf("%c ", tablero[i][j]);
+                        }
+                        printf("\n");
+                    }
+
+                    printf("\nGanaste algo en tu vida");
+                    break;
+                }else
+
                 for(int i=0;i<3;i++){
                     for(int j=0;j<3;j++){
                         printf("%c ", tablero[i][j]);
                     }
                 printf("\n");
-                }
-                if(tablero [0][0] == 'O' && tablero [0][1] == 'O' && tablero [0][2] == 'O' ||
-                tablero [1][0] == 'O' && tablero [1][1] == 'O' && tablero [1][2] == 'O' ||
-                tablero [2][0] == 'O' && tablero [2][1] == 'O' && tablero [2][2] == 'O' ||
-                tablero [0][0] == 'O' && tablero [1][0] == 'O' && tablero [2][0] == 'O' ||
-                tablero [0][1] == 'O' && tablero [1][1] == 'O' && tablero [2][1] == 'O' ||
-                tablero [0][2] == 'O' && tablero [1][2] == 'O' && tablero [2][2] == 'O' ||
-                tablero [0][0] == 'O' && tablero [1][1] == 'O' && tablero [2][2] == 'O' ||
-                tablero [0][2] == 'O' && tablero [1][1] == 'O' && tablero [2][0] == 'O'){
-                    printf("Ganaste algo en tu vida");
-                    break;
                 }
                 turno--;
                 intentos++;
