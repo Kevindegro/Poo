@@ -16,9 +16,13 @@ int main(){
     int vidas_T=3;
     int vidas_L=3;
     char tablero[N][N];
+    int Equipo;
 
     printf("Bienvenido al juego de la Liebre y la tortuga.\n             Seleccione un equipo:\n\n");
+    printf("1-Equipo Tortuga\n2-Equipo Libre\n\n");
+    scanf("%d", &Equipo);
 
+    
 //Llena la matriz con X
     for(int i=0;i<=N;i++){
         for(int j=0;j<=N;j++){
