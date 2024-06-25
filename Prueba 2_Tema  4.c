@@ -14,6 +14,8 @@ int main(){
     int L2=0;
     int T1=0;
     int T2=0;
+    int FL=0;
+    int FT=0;
     int N=14;
     int dado;
     int a;
@@ -72,20 +74,42 @@ int contador2 = 0;
 //bucle para relizar los movimientos y jugadas/elecciones.
     int bucle = 10;
     while(bucle>5){
+        //Solo son variables temporales para limpiar la posicion anterior del jugador
+        int k;
+        int z;
+
+        //Se utiliza para la eleccion del jugador
         int opciones;
-        tablero[0][0] = 3:
+        tablero[0][0] = 3;
         if(Equipo== 1){
-            printf("Elija una opcion:\n 1-Tirar dado.\n 2-Usar Comodin.\n 3-Rendirse.\n\n");
+            printf("\n\nElija una opcion:\n 1-Tirar dado.\n 2-Usar Comodin.\n 3-Rendirse.\n\n");
             scanf("%d", &opciones);
 
             if(opciones == 1){
-                dado = rand("")
+                dado = rand() % 6 + 1;
+                k=T1
+                z=T2
+                T2=T2+dado;
+                if(T2== 14){
+                    T1++;
+                    T2=0;
+                }
+                tablero[k][z]= 'X'
+                tablero[T1][T2]= 'T';
+
+                   for(int i=0;i<=N;i++){
+                        for(int j=0;j<=N;j++){
+                            printf("%c ", tablero[i][j]);
+                        }
+                        printf("\n");
+                    }
             }
         }
-
+/*
         if(Equipo == 2){
 
         }
+*/
     }
 
     return 0;
