@@ -11,6 +11,7 @@
 int main(){
     srand(time(NULL));
     int L1=0;
+    int turno=0;
     int L2=0;
     int T1=0;
     int T2=0;
@@ -27,7 +28,7 @@ int main(){
 
     printf("Bienvenido al juego de la Liebre y la tortuga.\n             Seleccione un equipo:\n\n");
     printf("1-Equipo Tortuga\n2-Equipo Libre\n\n");
-    scanf("%d", &Equipo);
+    scanf("%d\n", &Equipo);
 
 
 //Llena la matriz con X
@@ -74,40 +75,118 @@ int contador2 = 0;
 //bucle para relizar los movimientos y jugadas/elecciones.
     int bucle = 10;
     while(bucle>5){
-        //Solo son variables temporales para limpiar la posicion anterior del jugador
+        //Solo son variables temporales para limpiar la posicion anterior del jugador Toruga
         int k;
         int z;
-
+        //Solo son variables temporales para limpiar la posicion anterior del jugador Liebre
+        int h;
+        int d;
         //Se utiliza para la eleccion del jugador
         int opciones;
         tablero[0][0] = 3;
         if(Equipo== 1){
             printf("\n\nElija una opcion:\n 1-Tirar dado.\n 2-Usar Comodin.\n 3-Rendirse.\n\n");
-            scanf("%d", &opciones);
+            scanf("%d\n", &opciones);
 
             if(opciones == 1){
                 dado = rand() % 6 + 1;
-                k=T1
-                z=T2
+                k=T1;
+                z=T2;
                 T2=T2+dado;
                 if(T2== 14){
                     T1++;
                     T2=0;
                 }
-                tablero[k][z]= 'X'
+                //limpia la posicion anterior de la tortuga
+                tablero[k][z]= 'X';
+
+                //Coloca su nueva posicion
                 tablero[T1][T2]= 'T';
 
-                   for(int i=0;i<=N;i++){
-                        for(int j=0;j<=N;j++){
-                            printf("%c ", tablero[i][j]);
-                        }
-                        printf("\n");
-                    }
-            }
-        }
-/*
-        if(Equipo == 2){
+                if(tablero [T1][T2] == 'O'){
+                    printf("Perdiste, Gana la Liebre");
+                    return 0;
+                }
 
+                //Movimiento de la Liebre
+                dado = rand() % 6 + 1;
+                h=L1;
+                d=L2;
+                L2=L2+dado;
+                if(L2== 14){
+                    L1++;
+                    L2=0;
+                }
+                //limpia la posicion anterior de la tortuga
+                tablero[h][d]= 'X';
+
+                //Coloca su nueva posicion
+                tablero[L1][L2]= 'L';
+
+                if(tablero [T1][T2] == 'O'){
+                    printf("Ganaste, La liebre se cayo");
+                    return 0;
+                }
+
+                for(int i=0;i<=N;i++){
+                    for(int j=0;j<=N;j++){
+                        printf("%c ", tablero[i][j]);
+                    }
+                    printf("\n");
+                }
+            }
+        }else
+        if(Equipo == 2){
+            printf("\n\nElija una opcion:\n 1-Tirar dado.\n 2-Usar Comodin.\n 3-Rendirse.\n\n");
+            scanf("%d\n", &opciones);
+
+            if(opciones == 1){
+                dado = rand() % 6 + 1;
+                h=L1;
+                d=L2;
+                L2=L2+dado;
+                if(L2== 14){
+                    L1++;
+                    L2=0;
+                }
+                //limpia la posicion anterior de la Liebre
+                tablero[h][d]= 'X';
+
+                //Coloca su nueva posicion
+                tablero[L1][L2]= 'L';
+
+                if(tablero [L1][L2] == 'O'){
+                    printf("Perdiste, Gana la Tortuga");
+                    return 0;
+                }
+
+                //Movimiento de la Tortuga
+                dado = rand() % 6 + 1;
+                k=T1;
+                z=T2;
+                T2=T2+dado;
+                if(T2== 14){
+                    T1++;
+                    T2=0;
+                }
+                //limpia la posicion anterior de la tortuga
+                tablero[k][z]= 'X';
+
+                //Coloca su nueva posicion
+                tablero[T1][T2]= 'T';
+
+                if(tablero [T1][T2] == 'O'){
+                    printf("Ganaste, La Tortuga se cayo");
+                    return 0;
+                }
+
+                for(int i=0;i<=N;i++){
+                    for(int j=0;j<=N;j++){
+                        printf("%c ", tablero[i][j]);
+                    }
+                    printf("\n");
+                }
+            }
         }
 */
     }
