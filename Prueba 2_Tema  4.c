@@ -28,7 +28,7 @@ int main(){
 
     printf("Bienvenido al juego de la Liebre y la tortuga.\n             Seleccione un equipo:\n\n");
     printf("1-Equipo Tortuga\n2-Equipo Libre\n\n");
-    scanf("%d\n", &Equipo);
+    scanf("%d", &Equipo);
 
 
 //Llena la matriz con X
@@ -85,13 +85,16 @@ int contador2 = 0;
         int opciones;
         tablero[0][0] = 3;
         if(Equipo== 1){
-            printf("\n\nElija una opcion:\n 1-Tirar dado.\n 2-Usar Comodin.\n 3-Rendirse.\n\n");
-            scanf("%d\n", &opciones);
+            printf("\n\nElija una opcion:\n 1-Tirar dado.\n 2-Rendirse.\n\n");
+            scanf("%d", &opciones);
 
             if(opciones == 1){
                 dado = rand() % 6 + 1;
                 k=T1;
                 z=T2;
+                if(tablero[T1][T2+dado] == 'C'){
+                    dado=dado*2;
+                }
                 T2=T2+dado;
                 if(T2== 14){
                     T1++;
@@ -107,11 +110,15 @@ int contador2 = 0;
                     printf("Perdiste, Gana la Liebre");
                     return 0;
                 }
+                
 
                 //Movimiento de la Liebre
                 dado = rand() % 6 + 1;
                 h=L1;
                 d=L2;
+                if(tablero[L1][L2+dado] == 'C'){
+                    dado=dado + 1;
+                }
                 L2=L2+dado;
                 if(L2== 14){
                     L1++;
@@ -137,13 +144,16 @@ int contador2 = 0;
             }
         }else
         if(Equipo == 2){
-            printf("\n\nElija una opcion:\n 1-Tirar dado.\n 2-Usar Comodin.\n 3-Rendirse.\n\n");
-            scanf("%d\n", &opciones);
+            printf("\n\nElija una opcion:\n 1-Tirar dado.\n 2-Rendirse.\n\n");
+            scanf("%d", &opciones);
 
             if(opciones == 1){
                 dado = rand() % 6 + 1;
                 h=L1;
                 d=L2;
+                if(tablero[T1][T2+dado] == 'C'){
+                    dado = dado + 1;
+                }
                 L2=L2+dado;
                 if(L2== 14){
                     L1++;
@@ -164,6 +174,9 @@ int contador2 = 0;
                 dado = rand() % 6 + 1;
                 k=T1;
                 z=T2;
+                if(tablero[T1][T2+dado] == 'C'){
+                    dado=dado*2;
+                }
                 T2=T2+dado;
                 if(T2== 14){
                     T1++;
@@ -188,7 +201,6 @@ int contador2 = 0;
                 }
             }
         }
-*/
     }
 
     return 0;
