@@ -122,11 +122,6 @@ int main() {
 }
 
 
-
-
-
-
-
 //Programa 2
 
 #include <stdio.h>
@@ -216,3 +211,4 @@ int main() {
 
 //Programa 3
 
+//No me dio el tiempo tenia que rendir lengua :(
