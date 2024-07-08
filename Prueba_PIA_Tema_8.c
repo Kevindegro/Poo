@@ -5,7 +5,7 @@
 #define FILAS 4
 #define COLUMNAS 3
 
-// Función para crear la matriz a partir de los números ingresados por el usuario
+// Crea la matriz a partir de los números ingresados por el usuario
 void crear_matriz(int matriz[FILAS][COLUMNAS]) {
     int i, j;
     printf("Ingrese los 12 números para llenar la matriz (de izquierda a derecha y de arriba hacia abajo):\n");
@@ -16,7 +16,7 @@ void crear_matriz(int matriz[FILAS][COLUMNAS]) {
     }
 }
 
-// Función para dibujar la matriz en pantalla
+// Dibuja la matriz en pantalla
 void dibujar_matriz(int matriz[FILAS][COLUMNAS]) {
     int i, j;
     printf("Matriz:\n");
@@ -28,7 +28,7 @@ void dibujar_matriz(int matriz[FILAS][COLUMNAS]) {
     }
 }
 
-// Función para calcular y mostrar la suma de la diagonal principal
+// Calculaa y muestra la suma de la diagonal principal
 int suma_diagonal_principal(int matriz[FILAS][COLUMNAS]) {
     int suma = 0;
     int i;
@@ -38,7 +38,7 @@ int suma_diagonal_principal(int matriz[FILAS][COLUMNAS]) {
     return suma;
 }
 
-// Función para calcular y mostrar la suma de la diagonal secundaria
+// Calcula y muestra la suma de la diagonal secundaria
 int suma_diagonal_secundaria(int matriz[FILAS][COLUMNAS]) {
     int suma = 0;
     int i, j;
@@ -48,7 +48,7 @@ int suma_diagonal_secundaria(int matriz[FILAS][COLUMNAS]) {
     return suma;
 }
 
-// Función para calcular y mostrar la suma de la primera y última fila
+// Calcula y muestra la suma de la primera y última fila
 void suma_primera_ultima_fila(int matriz[FILAS][COLUMNAS]) {
     int suma_primera_fila = 0;
     int suma_ultima_fila = 0;
@@ -61,7 +61,7 @@ void suma_primera_ultima_fila(int matriz[FILAS][COLUMNAS]) {
     printf("Suma última fila: %d\n", suma_ultima_fila);
 }
 
-// Función para calcular y mostrar la suma de la primera y última columna
+// Calcula y muestra la suma de la primera y última columna
 void suma_primera_ultima_columna(int matriz[FILAS][COLUMNAS]) {
     int suma_primera_columna = 0;
     int suma_ultima_columna = 0;
@@ -77,7 +77,7 @@ void suma_primera_ultima_columna(int matriz[FILAS][COLUMNAS]) {
 int main() {
     int matriz[FILAS][COLUMNAS];
     int opcion;
-
+    //Solo es un swich generico de toda la vida dentro de un While(1) para que el usuario decida cuando termina
     while (1) {
         printf("\nMenú de opciones:\n");
         printf("1. Crear Matriz\n");
@@ -136,7 +136,7 @@ int main() {
 #define FILAS 20
 #define COLUMNAS 20
 
-// Función para crear una matriz con números aleatorios
+// Crear una matriz con números aleatorios
 void crear_matriz(int matriz[FILAS][COLUMNAS]) {
     int i, j;
     srand(time(NULL));
@@ -148,7 +148,7 @@ void crear_matriz(int matriz[FILAS][COLUMNAS]) {
     }
 }
 
-// Función para dibujar la matriz en pantalla
+// Dibuja la matriz en pantalla
 void dibujar_matriz(int matriz[FILAS][COLUMNAS]) {
     int i, j;
     for (i = 0; i < FILAS; i++) {
@@ -159,7 +159,7 @@ void dibujar_matriz(int matriz[FILAS][COLUMNAS]) {
     }
 }
 
-// Función para imprimir solo la primera columna de la matriz
+// Imprime solo la primera columna de la matriz
 void imprimir_primera_columna(int matriz[FILAS][COLUMNAS]) {
     int i;
     for (i = 0; i < FILAS; i++) {
@@ -170,7 +170,7 @@ void imprimir_primera_columna(int matriz[FILAS][COLUMNAS]) {
 int main() {
     int matriz[FILAS][COLUMNAS];
     int opcion;
-
+    //Solo es un swich generico de toda la vida dentro de un While(1) para que el usuario decida cuando termina
     while (1) {
         printf("\nMenú de opciones:\n");
         printf("1. Crear Matriz\n");
@@ -215,5 +215,4 @@ int main() {
 
 
 //Programa 3
-
 
