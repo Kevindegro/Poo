@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class GeneraNumApp {
+public class punto_18 {
  
     public static void main(String[] args) {
  
